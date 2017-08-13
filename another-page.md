@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Welcome to another page
+## Welcome to my Udacity Machine Learning Engineer Nanodgree Capstone project
 
 _yay_
 
