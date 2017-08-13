@@ -4,7 +4,8 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](another-page).
+[Link to TxDOT Bid Prediction](txdot-page).
+[Link to Stock Price Prediction](stock-page).
 
 There should be whitespace between paragraphs.
 
