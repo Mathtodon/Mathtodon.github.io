@@ -1,10 +1,3 @@
----
-layout: default
----
-
-## Welcome to my General Assembly Capstone project
-### This was completed as part of the Part-Time Data Science Program
-
 
 # TxDOT Project
 
@@ -1844,6 +1837,3 @@ print ('correct testing classification = ', model_1.score(test_X, test_y_more))
 ```python
 
 ```
-
-
-[home](./)
