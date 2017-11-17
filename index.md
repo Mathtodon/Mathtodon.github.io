@@ -1,15 +1,11 @@
 ---
 layout: default
 ---
-## [](#header-2) Projects
-[Link to TxDOT Bid Prediction](txdot-page).
-
-[Link to Stock Price Prediction](stock-page).
 
 
 # [](#header-1)About Me
 
-My name is Collin Hazlett. I live in NYC and enjoy learning about Learning, Machine or Human based. I am originally from Austin, Texas where I grew up and attended the University of Texas. I currently hold a B.S. in Mathmematics and a B.A. in Economics and am in the process of applying to Graduate Schools. 
+Hello! Thanks for visiting my site! My name is Collin Hazlett and I currently live in NYC. I am originally from Austin, Texas where I grew up and attended the University of Texas. In 2014 I recieved a B.S. in Mathmematics and a B.A. in Economics and am in the process of applying to Graduate Schools. 
 
 I have passed 4 actuarial exams: P, FM, MFE, and C
 
@@ -23,7 +19,15 @@ I have passed 4 actuarial exams: P, FM, MFE, and C
 
 While studying for my fourth exam, I also enrolled in a Data Science course with General Assembly where I learned to program in Python and started my interest in Machine Learning.
 
-Since then, I have completed the Machine Learning Engineer Nanodegree from UDACITY and multiple online courses for SQL and A.I.
+Since then, I have completed the Machine Learning Engineer Nanodegree from UDACITY and multiple online courses for SQL and Speed Reading.
+
+I love learning and I'm excited about what A.I. and M.L. can offer to the field of Education. 
+
+Check out my projects in the links below.
 
 
+## [](#header-2) Projects
+[Link to TxDOT Bid Prediction Project](txdot-page).
+
+[Link to Stock Price Prediction Project](stock-page).
 
