@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+[home](./)
 
 ## Welcome to my Udacity Capstone project
 ### This was completed as part of the Machine Learning Engineer Nanodgree Program
@@ -209,16 +210,21 @@ images
 
 I would like to thank the following sources for their code which was repurposed during my project.
 
-Pythonprogramming.net  - Python Programming for Finance videos and code
+## Pythonprogramming.net  
+- Python Programming for Finance videos and code
 	Harrison’s videos and code helped me create the dataset and visualize the correlation matrix
 
 https://pythonprogramming.net/getting-stock-prices-python-programming-for-finance/ 
 
-Diving into data – a blog on machine learning, data mining and visualizations 
+## Diving into data – 
+
+a blog on machine learning, data mining and visualizations 
 	The pretty_print_linear() function was very helpful to understand the models
 	The feature selection process helped me build my own models
+
 http://blog.datadive.net/selecting-good-features-part-ii-linear-models-and-regularization/ 
-UDACITY – 
+
+## UDACITY – 
 
 Learning models from the housing price prediction project were repurposed as a guide for models defined in the models.py file
 
