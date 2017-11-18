@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-# [](#header-1)About Me
+# [](#header-1)       About Me
 
 Hello! Thanks for visiting my site! My name is Collin Hazlett and I currently live in NYC. I am originally from Austin, Texas where I grew up and attended the University of Texas. In 2014 I recieved a B.S. in Mathmematics and a B.A. in Economics and am in the process of applying to Graduate Schools.
 
@@ -37,6 +37,4 @@ I love learning and I'm excited about what A.I. and M.L. can offer to the field 
 
 
 ## [](#header-2) Check out these Projects
-[Link to TxDOT Bid Prediction Project](txdot-page).
-
-[Link to Stock Price Prediction Project](stock-page).
+[TxDOT Bid Prediction Project](txdot-page) |  [Stock Price Prediction Project](stock-page)
