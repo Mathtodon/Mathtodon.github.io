@@ -1018,7 +1018,7 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_68_1.png)
+![](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_68_1.png)
 
 
 ## Model Predictions
@@ -1034,7 +1034,7 @@ print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_70_1.png)
+![](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_70_1.png)
 
 
 
