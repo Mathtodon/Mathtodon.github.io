@@ -7,6 +7,9 @@ layout: default
 
 Hello! Thanks for visiting my site! My name is Collin Hazlett and I currently live in NYC. I am originally from Austin, Texas where I grew up and attended the University of Texas. In 2014 I recieved a B.S. in Mathmematics and a B.A. in Economics and am in the process of applying to Graduate Schools.
 
+
+## [](#header-2) Actuarial Exams
+
 I have passed 4 actuarial exams: P, FM, MFE, and C
 
 | Exam         | Score      | Date        |
@@ -16,12 +19,13 @@ I have passed 4 actuarial exams: P, FM, MFE, and C
 | MFE          | 9          | 11/19/2015  |
 | C            | 7          | 06/21/2016  |
 
+## [](#header-2) Data Science and Online Courses
 
 While studying for my fourth exam, I also enrolled in a Data Science course with General Assembly where I learned to program in Python and started my interest in Machine Learning.
 
 Since then, I have completed the Machine Learning Engineer Nanodegree from UDACITY and multiple online courses for SQL and Speed Reading.
 
-| Course         | Platform      | Completion Date        |
+| Course                                | Platform                  | Completion Date        |
 |:---------------|:-----------------|:------------|
 | Data Science Program                  | General Assembly          | 05/15/2016  |
 | SASCRUNCH TRAINING                    | sascrunchtraining.com     | 10/23/2016  |
