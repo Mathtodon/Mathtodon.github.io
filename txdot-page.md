@@ -148,7 +148,7 @@ print df.plot('EngEst', 'WinBid', kind='scatter', c=df.cMoreOrLessThan10)
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_12_1.png)
+![png](https://mathtodon.github.io/assets/images/output_12_1.png)
 
 
 
@@ -162,7 +162,7 @@ print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_13_1.png)
+![png](https://mathtodon.github.io/assets/images/output_13_1.png)
 
 
 # 1) Splitting the Data into Training and Testing Sets
@@ -301,7 +301,7 @@ test_X.head()
 test_
 ```
 
-# Probabilistic Classifying using Logistic Regression
+## Probabilistic Classifying using Logistic Regression
 
 > ## More Than 10%
 
@@ -446,7 +446,7 @@ y_p_within.head()
 df_test.loc[:,'p_within'] = y_p_within
 ```
 
-# Model given Wining Bid is within 10% of TxDot Estimate
+## Model given Wining Bid is within 10% of TxDot Estimate
 
 
 ```python
@@ -557,7 +557,7 @@ df_test.Lnprediction_within.head()
 
 
 
-# Model given Wining Bid is More Than 10% of TxDot Estimate
+## Model given Wining Bid is More Than 10% of TxDot Estimate
 
 
 ```python
@@ -654,7 +654,7 @@ model_4.summary()
 df_test.loc[:,'Lnprediction_more'] = model_4.predict(test_X)
 ```
 
-# Model given Wining Bid is Less Than 10% of TxDot Estimate
+## Model given Wining Bid is Less Than 10% of TxDot Estimate
 
 
 ```python
@@ -751,7 +751,7 @@ model_5.summary()
 df_test.loc[:,'Lnprediction_less'] = model_5.predict(test_X)
 ```
 
-# Our Model Prediction of Winning Bid will be a Weighted average of Bid predictions with weights being the probability of being classified as such class found from Logistic Regression
+## Our Model Prediction of Winning Bid will be a Weighted average of Bid predictions with weights being the probability of being classified as such class found from Logistic Regression
 
 
 ```python
@@ -1014,9 +1014,6 @@ df_test.loc[:,'cWithin10Percent'] = df_test.Within10Percent.apply(lambda x: cmap
 print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Percent)
 ```
 
-    Axes(0.125,0.125;0.775x0.775)
-
-
 
 ![png](https://github.com/Mathtodon/Mathtodon.github.io/blob/master/assets/images/output_68_1.png)
 
@@ -1030,7 +1027,6 @@ df_test.loc[:,'cPredWithin10Percent'] = df_test.PredWithin10Percent.apply(lambda
 print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10Percent)
 ```
 
-    Axes(0.125,0.125;0.775x0.775)
 
 
 
