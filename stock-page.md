@@ -195,7 +195,7 @@ In future iterations of this project, I would like to try different timeseries o
 
 In projects after this one, I would like to better organize and streamline my code by using pipelines and iteratively cycling through different models. 
 
-##Source Code
+## Source Code
 The code for this project can be found on my GitHub here:
 
 Project Folder https://github.com/Mathtodon/Udacity_Project 
@@ -211,21 +211,21 @@ images
 I would like to thank the following sources for their code which was repurposed during my project.
 
 ## Pythonprogramming.net  
-- Python Programming for Finance videos and code
-	Harrison’s videos and code helped me create the dataset and visualize the correlation matrix
+- Python Programming for Finance videos and code.
+- Harrison’s videos and code helped me create the dataset and visualize the correlation matrix
 
 https://pythonprogramming.net/getting-stock-prices-python-programming-for-finance/ 
 
-## Diving into data – 
+## Diving into data 
 
-a blog on machine learning, data mining and visualizations 
-	The pretty_print_linear() function was very helpful to understand the models
-	The feature selection process helped me build my own models
+- a blog on machine learning, data mining and visualizations 
+- The pretty_print_linear() function was very helpful to understand the models
+- The feature selection process helped me build my own models
 
 http://blog.datadive.net/selecting-good-features-part-ii-linear-models-and-regularization/ 
 
-## UDACITY – 
+## UDACITY
 
-Learning models from the housing price prediction project were repurposed as a guide for models defined in the models.py file
+- Learning models from the housing price prediction project were repurposed as a guide for models defined in the models.py file
 
 [home](./)
