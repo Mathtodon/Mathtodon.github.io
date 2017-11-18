@@ -72,7 +72,7 @@ df['Diff'] = df['EngEst'] - df['WinBid']
 df['lnWinBid'] = np.log(df['WinBid'])
 df['lnEngEst'] = np.log(df['EngEst'])
 df['DiffLn'] = df['lnWinBid'] - df['lnEngEst']
-df['Within10Percent'] = 1 
+df['Within10Percent'] = 1
 df['PercentOff'] = df['Diff'] / df['EngEst']
 df['MoreOrLessThan10'] = 0
 df['LessThan10'] = 0
@@ -89,7 +89,7 @@ print len(df)
 ```
 
     5177
-    
+
 
 ## Exploring the Data
 
@@ -101,16 +101,16 @@ sns.jointplot(x="EngEst", y="WinBid", data=df, kind="reg"); sns.jointplot(x="lnE
 ```
 
 
-![png](.assets/images/output_7_0.png)
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_7_0.png)
 
 
 
-![png](.assets/images/output_7_1.png)
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_7_1.png)
 
 
 Because the TxDot Estimates are so highly correlated with the winning bid, we can use it as a baseline for the model predictions
 
-My idea was to classify the TxDot Estimates according to their scoring method of estimating within 10% of the winning bid and then having 3 separate regressive models for the 3 classes (within 10%, more than 10%, less than 10%). 
+My idea was to classify the TxDot Estimates according to their scoring method of estimating within 10% of the winning bid and then having 3 separate regressive models for the 3 classes (within 10%, more than 10%, less than 10%).
 
 TxDot's goal for their estimates is to have 55% of their estimates within 10% of the winning bid.
 
@@ -131,7 +131,7 @@ print  (Percent_April_2016)*100 , '% of the April 2016 TxDOT estimates were with
 
     50.3380336102 % of All the TxDOT estimates were within 10% of actual bid
     46.2686567164 % of the April 2016 TxDOT estimates were within 10% of actual bid
-    
+
 
 # We now need to build and train a model that can classify a bid as over or under the TxDOT estimate
 
@@ -145,10 +145,10 @@ print df.plot('EngEst', 'WinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ```
 
     Axes(0.125,0.125;0.775x0.775)
-    
 
 
-![png](.assets/images/output_12_1.png)
+
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_12_1.png)
 
 
 
@@ -159,10 +159,10 @@ print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ```
 
     Axes(0.125,0.125;0.775x0.775)
-    
 
 
-![png](.assets/images/output_13_1.png)
+
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_13_1.png)
 
 
 # 1) Splitting the Data into Training and Testing Sets
@@ -180,7 +180,7 @@ print len(df_train) ,'projects from Jan 2010 to April 2016'
 
     67 projects in April 2016
     5110 projects from Jan 2010 to April 2016
-    
+
 
 
 ```python
@@ -212,7 +212,7 @@ print len(test_y_less)
     5110
     67
     67
-    
+
 
 
 ```python
@@ -318,7 +318,7 @@ print 'coefficients =', model_1.coef_
 
     intercept    = [ 0.0001453]
     coefficients = [[ 0.00230722  0.21597156 -0.00191552  0.0116006   0.15382005 -0.00279872]]
-    
+
 
 #### Scoring
 
@@ -330,7 +330,7 @@ print 'correct testing classification = ', model_1.score(test_X, test_y_more)
 
     correct training classification =  0.714677103718
     correct testing classification =  0.65671641791
-    
+
 
 #### Predicting
 
@@ -375,7 +375,7 @@ print 'coefficients =', model_2.coef_
 
     intercept    = [-0.00046124]
     coefficients = [[-0.01289253 -0.40220173  0.00238074 -0.01342247 -0.32558187  0.00243721]]
-    
+
 
 #### Scoring
 
@@ -387,7 +387,7 @@ print 'correct testing  classification = ', model_2.score(test_X, test_y_less)
 
     correct training classification =  0.791585127202
     correct testing  classification =  0.731343283582
-    
+
 
 #### Predicting
 
@@ -463,10 +463,10 @@ model_3.summary()
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.999</td> 
+  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.999</td>
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.999</td> 
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.999</td>
 </tr>
 <tr>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>2.592e+05</td>
@@ -475,13 +475,13 @@ model_3.summary()
   <th>Date:</th>             <td>Wed, 01 Jun 2016</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>17:52:08</td>     <th>  Log-Likelihood:    </th> <td>  3907.2</td> 
+  <th>Time:</th>                 <td>17:52:08</td>     <th>  Log-Likelihood:    </th> <td>  3907.2</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>  2606</td>      <th>  AIC:               </th> <td>  -7798.</td> 
+  <th>No. Observations:</th>      <td>  2606</td>      <th>  AIC:               </th> <td>  -7798.</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>  2598</td>      <th>  BIC:               </th> <td>  -7752.</td> 
+  <th>Df Residuals:</th>          <td>  2598</td>      <th>  BIC:               </th> <td>  -7752.</td>
 </tr>
 <tr>
   <th>Df Model:</th>              <td>     7</td>      <th>                     </th>     <td> </td>    
@@ -492,7 +492,7 @@ model_3.summary()
 </table>
 <table class="simpletable">
 <tr>
-        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th> 
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th>
 </tr>
 <tr>
   <th>Intercept</th>     <td>   -3.2112</td> <td>    3.597</td> <td>   -0.893</td> <td> 0.372</td> <td>  -10.265     3.843</td>
@@ -574,10 +574,10 @@ model_4.summary()
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.992</td> 
+  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.992</td>
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.992</td> 
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.992</td>
 </tr>
 <tr>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>2.733e+04</td>
@@ -586,13 +586,13 @@ model_4.summary()
   <th>Date:</th>             <td>Wed, 01 Jun 2016</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>17:52:22</td>     <th>  Log-Likelihood:    </th> <td>  1033.0</td> 
+  <th>Time:</th>                 <td>17:52:22</td>     <th>  Log-Likelihood:    </th> <td>  1033.0</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>  1488</td>      <th>  AIC:               </th> <td>  -2050.</td> 
+  <th>No. Observations:</th>      <td>  1488</td>      <th>  AIC:               </th> <td>  -2050.</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>  1480</td>      <th>  BIC:               </th> <td>  -2008.</td> 
+  <th>Df Residuals:</th>          <td>  1480</td>      <th>  BIC:               </th> <td>  -2008.</td>
 </tr>
 <tr>
   <th>Df Model:</th>              <td>     7</td>      <th>                     </th>     <td> </td>    
@@ -603,7 +603,7 @@ model_4.summary()
 </table>
 <table class="simpletable">
 <tr>
-        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th> 
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th>
 </tr>
 <tr>
   <th>Intercept</th>     <td>  -13.2256</td> <td>   10.209</td> <td>   -1.296</td> <td> 0.195</td> <td>  -33.250     6.799</td>
@@ -671,10 +671,10 @@ model_5.summary()
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.995</td> 
+  <th>Dep. Variable:</th>        <td>lnWinBid</td>     <th>  R-squared:         </th> <td>   0.995</td>
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.995</td> 
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.995</td>
 </tr>
 <tr>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>2.895e+04</td>
@@ -683,13 +683,13 @@ model_5.summary()
   <th>Date:</th>             <td>Wed, 01 Jun 2016</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>17:52:27</td>     <th>  Log-Likelihood:    </th> <td>  1000.8</td> 
+  <th>Time:</th>                 <td>17:52:27</td>     <th>  Log-Likelihood:    </th> <td>  1000.8</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>  1083</td>      <th>  AIC:               </th> <td>  -1986.</td> 
+  <th>No. Observations:</th>      <td>  1083</td>      <th>  AIC:               </th> <td>  -1986.</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>  1075</td>      <th>  BIC:               </th> <td>  -1946.</td> 
+  <th>Df Residuals:</th>          <td>  1075</td>      <th>  BIC:               </th> <td>  -1946.</td>
 </tr>
 <tr>
   <th>Df Model:</th>              <td>     7</td>      <th>                     </th>     <td> </td>    
@@ -700,7 +700,7 @@ model_5.summary()
 </table>
 <table class="simpletable">
 <tr>
-        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th> 
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th> <th>[95.0% Conf. Int.]</th>
 </tr>
 <tr>
   <th>Intercept</th>     <td>  -33.7856</td> <td>   10.879</td> <td>   -3.106</td> <td> 0.002</td> <td>  -55.131   -12.440</td>
@@ -765,7 +765,7 @@ df_test.columns
 
     <ipython-input-1-6070e99c2262> in <module>()
     ----> 1 df_test.columns
-    
+
 
     NameError: name 'df_test' is not defined
 
@@ -885,17 +885,17 @@ PercentIncrease = (ModelPercent)*100 - (Percent_April_2016)*100
 NumberCorrectIncrease = (PercentIncrease/100)*len(df_test)
 print  (Percent_April_2016)*100 , '% of the TxDOT estimates were within 10% of actual bid'
 print  (ModelPercent)*100 , '% of the Model predictions were within 10% of actual bid'
-print 
+print
 print 'this is a increase of :', PercentIncrease, '%'
 print 'or', NumberCorrectIncrease, 'more estimates within the 10% threshhold'
 ```
 
     46.2686567164 % of the TxDOT estimates were within 10% of actual bid
     53.7313432836 % of the Model predictions were within 10% of actual bid
-    
+
     this is a increase of : 7.46268656716 %
     or 5.0 more estimates within the 10% threshhold
-    
+
 
 
 ```python
@@ -903,7 +903,7 @@ print 'In April 2016 TxDOT under estimated bids by: ' , df_test.Diff.sum()
 print
 print 'In April 2016 the Model under estimated bids by: ' ,df_test.PredDiff.sum()
 print
-print 'In April 2016 the model was ' , df_test.Diff.sum() - df_test.PredDiff.sum() , 'closer to the winning bids than TxDOT' 
+print 'In April 2016 the model was ' , df_test.Diff.sum() - df_test.PredDiff.sum() , 'closer to the winning bids than TxDOT'
 print
 print 'The model predicted a sum of' ,df_test.BidPrediction.sum() ,'for all the projects in April 2016'
 print
@@ -911,15 +911,15 @@ print 'TxDOT predicted a sum of' ,df_test.EngEst.sum() ,'for all the projects in
 ```
 
     In April 2016 TxDOT under estimated bids by:  -3410280.24
-    
+
     In April 2016 the Model under estimated bids by:  -19260901.731
-    
+
     In April 2016 the model was  15850621.491 closer to the winning bids than TxDOT
-    
+
     The model predicted a sum of 209008961.949 for all the projects in April 2016
-    
+
     TxDOT predicted a sum of 224859583.44 for all the projects in April 2016
-    
+
 
 
 ```python
@@ -1015,10 +1015,10 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
 ```
 
     Axes(0.125,0.125;0.775x0.775)
-    
 
 
-![png](.assets/images/output_68_1.png)
+
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_68_1.png)
 
 
 ## Model Predictions
@@ -1031,10 +1031,10 @@ print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10
 ```
 
     Axes(0.125,0.125;0.775x0.775)
-    
 
 
-![png](.assets/images/output_70_1.png)
+
+![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_70_1.png)
 
 
 
