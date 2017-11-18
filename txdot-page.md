@@ -2,10 +2,18 @@
 layout: default
 ---
 
-## Welcome to my General Assembly Capstone project
-### This was completed as part of the Part-Time Data Science Program
+## Welcome to my TxDot project
 
-# TxDOT Project
+### This was originally done as my capstone project for a Data Science course I took with General Assembly in 2016
+
+### Background:
+
+### Each month, The Texas Department of Transportation auctions off construction projects that bid on by contracting companies. These projects are paid for by the Texas Government and so the data is freely available through an open data request. Each project can cost multiple millions of dollars so winning a bid means a lot of business to the company and a large cost to the government. Therefore, estimating the winning bid price is important for both sides.
+
+### TxDOT wants to make sure to budget enough money for each project and relies on engineers to estimate the cost according to the equipment and supplies needed in each project. These estimates are usually based off the average going price of each item and then summed together. TxDOT judges these estimates base on how close they are to the actual winning bid. Their goal is to be within 10% of the actual winning bid and are investigated if otherwise.
+
+### The goal of this project was to estimate new project winning prices using the historical price estimates, project descriptions, and winning bid prices. 
+
 
 
 ```python
@@ -127,13 +135,14 @@ Percent_April_2016 = float(df[(df.Year == 2016) & (df.Month == 4)].Within10Perce
 print  (Percent_April_2016)*100 , '% of the April 2016 TxDOT estimates were within 10% of actual bid'
 ```
 
-    50.3380336102 % of All the TxDOT estimates were within 10% of actual bid
-    46.2686567164 % of the April 2016 TxDOT estimates were within 10% of actual bid
+
+    50.3 % of All the TxDOT estimates were within 10% of actual bid
+    46.3 % of the April 2016 TxDOT estimates were within 10% of actual bid
 
 
 ### We now need to build and train a model that can classify a bid as over or under the TxDOT estimate
 
-Here We can see how this classification might look
+#### Here We can see how this classification might look
 
 
 ```python
@@ -142,7 +151,6 @@ df['cMoreOrLessThan10'] = df.MoreOrLessThan10.apply(lambda x: cmap[str(x)])
 print df.plot('EngEst', 'WinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ```
 
-    Axes(0.125,0.125;0.775x0.775)
 
 
 
@@ -155,8 +163,6 @@ cmap = {'0': 'g', '1': 'r', '2': 'b' }
 df['cMoreOrLessThan10'] = df.MoreOrLessThan10.apply(lambda x: cmap[str(x)])
 print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ```
-
-    Axes(0.125,0.125;0.775x0.775)
 
 
 
@@ -175,6 +181,7 @@ print len(df_train) ,'projects from Jan 2010 to April 2016'
 
 #df_train[['Year','Month']].tail()
 ```
+
 
     67 projects in April 2016
     5110 projects from Jan 2010 to April 2016
