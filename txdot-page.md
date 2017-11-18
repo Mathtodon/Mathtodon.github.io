@@ -1001,9 +1001,9 @@ df_test[['Diff','PredDiff']].describe()
 
 # Bid Model Comparison by Graph
 
-> Red is Bad  (beyond the 10% threshhold)
+ Red is Bad  (beyond the 10% threshhold)
 
-> Green is Good   (within 10% of actual)
+ Green is Good   (within 10% of actual)
 
 ## TxDOT Estimates
 
@@ -1018,7 +1018,7 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
 
 
 
-![](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_68_1.png)
+![png](https://github.com/Mathtodon/Mathtodon.github.io/blob/master/assets/images/output_68_1.png)
 
 
 ## Model Predictions
@@ -1034,7 +1034,7 @@ print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10
 
 
 
-![](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_70_1.png)
+![png](https://github.com/Mathtodon/Mathtodon.github.io/blob/master/assets/images/output_70_1.png)
 
 
 
