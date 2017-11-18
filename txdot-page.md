@@ -91,9 +91,7 @@ print len(df)
     5177
 
 
-## Exploring the Data
-
-## We see that Bids are Log Normally Distributed
+## Exploring the Data, We see that Bids are Log Normally Distributed
 
 
 ```python
@@ -101,11 +99,11 @@ sns.jointplot(x="EngEst", y="WinBid", data=df, kind="reg"); sns.jointplot(x="lnE
 ```
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_7_0.png)
+![png](https://mathtodon.github.io/assets/images/output_7_0.png)
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/assets/images/output_7_1.png)
+![png](https://mathtodon.github.io/assets/images/output_7_1.png)
 
 
 Because the TxDot Estimates are so highly correlated with the winning bid, we can use it as a baseline for the model predictions
@@ -133,9 +131,9 @@ print  (Percent_April_2016)*100 , '% of the April 2016 TxDOT estimates were with
     46.2686567164 % of the April 2016 TxDOT estimates were within 10% of actual bid
 
 
-# We now need to build and train a model that can classify a bid as over or under the TxDOT estimate
+### We now need to build and train a model that can classify a bid as over or under the TxDOT estimate
 
-> ### Here We can see how this classification might look
+Here We can see how this classification might look
 
 
 ```python
@@ -165,7 +163,7 @@ print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ![png](https://mathtodon.github.io/assets/images/output_13_1.png)
 
 
-# 1) Splitting the Data into Training and Testing Sets
+## 1) Splitting the Data into Training and Testing Sets
 
 
 ```python
@@ -187,7 +185,7 @@ print len(df_train) ,'projects from Jan 2010 to April 2016'
 #df_test.columns
 ```
 
-   ### This will split the training and testing sets into a more useful format for loading into models
+#### This will split the training and testing sets into a more useful format for loading into models
 
 
 ```python
@@ -295,15 +293,9 @@ test_X.head()
 </div>
 
 
-
-
-```python
-test_
-```
-
 ## Probabilistic Classifying using Logistic Regression
 
-> ## More Than 10%
+### More Than 10%
 
 #### Training
 
@@ -360,7 +352,7 @@ y_p_more.head()
 df_test.loc[:,'p_more'] = y_p_more
 ```
 
-> ## Less Than 10%
+### Less Than 10%
 
 #### Training
 
@@ -417,7 +409,7 @@ y_p_less.head()
 df_test.loc[:,'p_less'] = y_p_less
 ```
 
-> ## Within 10%
+### Within 10%
 
 #### P(within) = 1- P(more) - P(less)
 
@@ -446,7 +438,7 @@ y_p_within.head()
 df_test.loc[:,'p_within'] = y_p_within
 ```
 
-## Model given Wining Bid is within 10% of TxDot Estimate
+## Build a model given that the Winning Bid is within 10% of TxDot Estimate
 
 
 ```python
@@ -557,7 +549,7 @@ df_test.Lnprediction_within.head()
 
 
 
-## Model given Wining Bid is More Than 10% of TxDot Estimate
+### Build a model given that the Winning Bid is More Than 10% of TxDot Estimate
 
 
 ```python
@@ -654,7 +646,8 @@ model_4.summary()
 df_test.loc[:,'Lnprediction_more'] = model_4.predict(test_X)
 ```
 
-## Model given Wining Bid is Less Than 10% of TxDot Estimate
+
+### Build a model given that the Winning Bid is Less Than 10% of TxDot Estimate
 
 
 ```python
@@ -751,28 +744,16 @@ model_5.summary()
 df_test.loc[:,'Lnprediction_less'] = model_5.predict(test_X)
 ```
 
-## Our Model Prediction of Winning Bid will be a Weighted average of Bid predictions with weights being the probability of being classified as such class found from Logistic Regression
+### Our Model Prediction of Winning Bid will be a Weighted average of Bid predictions with weights being the probability of being classified as such class found from Logistic Regression
 
 
 ```python
-df_test.columns
-```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-1-6070e99c2262> in <module>()
-    ----> 1 df_test.columns
-
-
-    NameError: name 'df_test' is not defined
-
-
 df_test['Hyp_More'] = 1
+
 df_test['Hyp_Less'] = 1
+
 df_test['Hyp_Within'] = 1
+```
 
 
 ```python
@@ -856,20 +837,13 @@ df_test[['p_more', 'p_less', 'p_within', 'Lnprediction_within', 'Lnprediction_mo
 
 
 
-## E[Bid] = P(within10)xE[within10] + P(above10)xE[above10] + P(below10)xE[below10]
+### E[Bid] = P(within10)xE[within10] + P(above10)xE[above10] + P(below10)xE[below10]
 
 
 ```python
-df_test.loc[:,'lnpred'] = df_test.p_within*df_test.Lnprediction_within + df_test.p_more*df_test.Lnprediction_more + df_test.p_less*df_test.Lnprediction_less  
-```
+df_test.loc[:,'lnpred'] = df_test.p_within*df_test.Lnprediction_within + df_test.p_more*df_test.Lnprediction_more + df_test.p_less*df_test.Lnprediction_less
 
-
-```python
-df_test.loc[:,'BidPrediction'] = np.exp(df_test.loc[:,'lnpred'])
-```
-
-
-```python
+df_test.loc[:,'BidPrediction'] = np.exp(df_test.loc[:,'lnpred'])  
 df_test.loc[:,'PredDiff'] = df_test.loc[:,'BidPrediction'] - df_test.loc[:,'WinBid']
 df_test.loc[:,'PredPercentOff'] = df_test.loc[:,'PredDiff'] / df_test.loc[:,'BidPrediction']
 
@@ -877,6 +851,8 @@ df_test.loc[:,'PredWithin10Percent'] = 1
 df_test.loc[(df_test.PredPercentOff > .10) , 'PredWithin10Percent'] = 0
 df_test.loc[(df_test.PredPercentOff < -.10) , 'PredWithin10Percent'] = 0
 ```
+
+
 
 
 ```python
@@ -1001,9 +977,9 @@ df_test[['Diff','PredDiff']].describe()
 
 # Bid Model Comparison by Graph
 
- Red is Bad  (beyond the 10% threshhold)
+#### Red is Bad  (beyond the 10% threshhold)
 
- Green is Good   (within 10% of actual)
+#### Green is Good   (within 10% of actual)
 
 ## TxDOT Estimates
 
@@ -1015,7 +991,7 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
 ```
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/blob/master/assets/images/output_68_1.png)
+![png](https://mathtodon.github.io/assets/images/output_68_1.png)
 
 
 ## Model Predictions
@@ -1030,13 +1006,9 @@ print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10
 
 
 
-![png](https://github.com/Mathtodon/Mathtodon.github.io/blob/master/assets/images/output_70_1.png)
+![png](https://mathtodon.github.io/assets/images/output_70_1.png)
 
 
-
-```python
-
-```
 
 
 [home](./)
