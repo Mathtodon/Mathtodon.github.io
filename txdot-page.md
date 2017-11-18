@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-[home](./)
+[home](./) |  [Stock Price Prediction Project](stock-page).
 
 ## Welcome to my TxDot project
 
