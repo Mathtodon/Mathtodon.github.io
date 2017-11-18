@@ -1,9 +1,3 @@
----
-layout: default
----
-
-## Welcome to my General Assembly Capstone project
-### This was completed as part of the Part-Time Data Science Program
 
 # TxDOT Project
 
@@ -101,11 +95,11 @@ sns.jointplot(x="EngEst", y="WinBid", data=df, kind="reg"); sns.jointplot(x="lnE
 ```
 
 
-![png](.assets/images/output_7_0.png)
+![png](output_7_0.png)
 
 
 
-![png](.assets/images/output_7_1.png)
+![png](output_7_1.png)
 
 
 Because the TxDot Estimates are so highly correlated with the winning bid, we can use it as a baseline for the model predictions
@@ -148,7 +142,7 @@ print df.plot('EngEst', 'WinBid', kind='scatter', c=df.cMoreOrLessThan10)
     
 
 
-![png](.assets/images/output_12_1.png)
+![png](output_12_1.png)
 
 
 
@@ -162,7 +156,7 @@ print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
     
 
 
-![png](.assets/images/output_13_1.png)
+![png](output_13_1.png)
 
 
 # 1) Splitting the Data into Training and Testing Sets
@@ -1018,7 +1012,7 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
     
 
 
-![png](.assets/images/output_68_1.png)
+![png](output_68_1.png)
 
 
 ## Model Predictions
@@ -1034,13 +1028,10 @@ print df_test.plot('lnpred', 'lnWinBid', kind='scatter', c=df_test.cPredWithin10
     
 
 
-![png](.assets/images/output_70_1.png)
+![png](output_70_1.png)
 
 
 
 ```python
 
 ```
-
-
-[home](./)
