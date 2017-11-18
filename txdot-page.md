@@ -4,19 +4,21 @@ layout: default
 
 ## Welcome to my TxDot project
 
-### This was originally done as my capstone project for a Data Science course I took with General Assembly in 2016
+##### This was originally done as my capstone project for a Data Science course I took with General Assembly in 2016
 
 ### Background:
 
-#### Each month, The Texas Department of Transportation auctions off construction projects that bid on by contracting companies. These projects are paid for by the Texas Government and so the data is freely available through an open data request. Each project can cost multiple millions of dollars so winning a bid means a lot of business to the company and a large cost to the government. Therefore, estimating the winning bid price is important for both sides.
+ Each month, The Texas Department of Transportation auctions off construction projects that bid on by contracting companies. These projects are paid for by the Texas Government and so the data is freely available through an open data request. Each project can cost multiple millions of dollars so winning a bid means a lot of business to the company and a large cost to the government. Therefore, estimating the winning bid price is important for both sides.
 
-#### TxDOT wants to make sure to budget enough money for each project and relies on engineers to estimate the cost according to the equipment and supplies needed in each project. These estimates are usually based off the average going price of each item and then summed together. TxDOT judges these estimates base on how close they are to the actual winning bid. Their goal is to be within 10% of the actual winning bid and are investigated if otherwise.
+ TxDOT wants to make sure to budget enough money for each project and relies on engineers to estimate the cost according to the equipment and supplies needed in each project. These estimates are usually based off the average going price of each item and then summed together. TxDOT judges these estimates base on how close they are to the actual winning bid. Their goal is to be within 10% of the actual winning bid and are investigated if otherwise.
 
-#### The goal of this project was to estimate new project winning prices using the historical price estimates, project descriptions, and winning bid prices.
+ The goal of this project was to estimate new project winning prices using the historical price estimates, project descriptions, and winning bid prices.
 
 ### Summary:
 
-#### In my testing set, I was able to increase the accuracy of the TxDOT estimates by about 7% (according to the "within 10%" goal that they use to judge themselves on). However, overall my estimates were more inaccurate in terms of total cost. 
+ In my testing set, I was able to increase the accuracy of the TxDOT estimates by about 7% (according to the "within 10%" goal that they use to judge themselves on). However, overall my estimates were more inaccurate in terms of total cost.
+
+--------
 
 
 ```python
