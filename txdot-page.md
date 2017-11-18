@@ -19,6 +19,8 @@ layout: default
  In my testing set, I was able to increase the accuracy of the TxDOT estimates by about 7% (according to the "within 10%" goal that they use to judge themselves on). However, overall my estimates were more inaccurate in terms of total cost.
 
 --------
+--------
+
 
 
 ```python
@@ -36,7 +38,7 @@ import statsmodels.formula.api as smf
 from sklearn import feature_selection, linear_model
 ```
 
-## Load in the Data
+### Load in the Data
 
 
 ```python
@@ -51,7 +53,7 @@ len(df)
 
 
 
-## Formatting & Identifying the Data
+### Formatting & Identifying the Data
 
 
 ```python
@@ -104,7 +106,7 @@ print len(df)
     5177
 
 
-## Exploring the Data, We see that Bids are Log Normally Distributed
+### Exploring the Data, We see that Bids are Log Normally Distributed
 
 
 ```python
@@ -174,7 +176,7 @@ print df.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df.cMoreOrLessThan10)
 ![png](https://mathtodon.github.io/assets/images/output_13_1.png)
 
 
-## 1) Splitting the Data into Training and Testing Sets
+### Splitting the Data into Training and Testing Sets
 
 
 ```python
@@ -305,7 +307,7 @@ test_X.head()
 </div>
 
 
-## Probabilistic Classifying using Logistic Regression
+### Probabilistic Classifying using Logistic Regression
 
 ### More Than 10%
 
@@ -450,7 +452,7 @@ y_p_within.head()
 df_test.loc[:,'p_within'] = y_p_within
 ```
 
-## Build a model given that the Winning Bid is within 10% of TxDot Estimate
+### Build a model given that the Winning Bid is within 10% of TxDot Estimate
 
 
 ```python
@@ -993,7 +995,7 @@ df_test[['Diff','PredDiff']].describe()
 
 #### Green is Good   (within 10% of actual)
 
-## TxDOT Estimates
+### TxDOT Estimates
 
 
 ```python
@@ -1006,7 +1008,7 @@ print df_test.plot('lnEngEst', 'lnWinBid', kind='scatter', c=df_test.cWithin10Pe
 ![png](https://mathtodon.github.io/assets/images/output_68_1.png)
 
 
-## Model Predictions
+### Model Predictions
 
 
 ```python
